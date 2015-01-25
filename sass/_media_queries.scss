@@ -1,0 +1,64 @@
+/**
+ * container media queries
+ */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-min){
+	.container{
+		width: auto;
+	}
+	
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-mid) {
+	.container{
+		width: 950px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg) {
+	.container{
+		width: 1170px;
+	}
+}
+
+
+/**
+ * grid media queries
+ */
+
+@media (max-width: 622px){
+	[class*='grid-']{
+		width: 100%;
+	}
+}
+
+@media (max-width: $screen-min) and (min-width: 622px){
+	//full
+	.grid-1-of-2{
+		width: 100%;
+	}
+
+	//half
+	.grid-1-of-4{
+		width: 50%;
+	}
+
+}
+
+
+
+/*
+
+@media (max-width: 500px){
+	[class*='grid-']{
+		width: 100% - $margin*2;
+	}
+
+}
+
+@
+
+ */

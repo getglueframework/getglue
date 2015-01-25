@@ -1,0 +1,161 @@
+.accordian-navbar{
+	width: 100%;
+	border: solid 1px #d0d0d0;
+	
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	ul{
+		background: #FFF;
+		padding: 0;
+		list-style-type: none;
+		li.active ul{
+			display: block;
+		}
+		li{
+			ul{
+				display: none;
+				li{
+					a{
+						text-decoration: none;
+						color: $secondary-color;
+						padding: 10px;
+						padding-left: 15px;
+						display: block;
+						@include smooth();
+						&:hover{
+							text-decoration: underline;
+							
+
+						}
+					}
+					border-bottom: solid 1px #E6E6E6;
+					&:last-of-type{
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+	> ul > li{
+		
+		background: #FFFFFF;
+		cursor: pointer;
+		h3{
+			padding: 10px;
+			font-size: 1em;
+			
+			color: $primary-color;
+		}
+	}
+}
+
+.accordian-dark{
+	border-radius: 0;
+	border: none;
+
+	ul{
+		background: lighten($dark-nav, 5%);
+		li{
+			ul{
+				li{
+					border-bottom: none;
+					a{
+						color: #FFF;
+						border-left: solid 0px $dark-nav;
+						&:hover{
+							text-decoration: none;
+							background: lighten($dark-nav, 3%);
+							
+							
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	> ul > li{
+		background: $dark-nav;
+		@include smooth();
+		&:hover{
+			background: darken($dark-nav, 2%);
+		}
+		h3{
+			color: #FFF;
+		}
+	}
+}
+
+.accordian-blue{
+	border-radius: 0;
+	
+	ul{
+		background: #FFF;
+		li{
+			ul{
+				li{
+					
+					a{
+						color: $light-nav-color;
+						
+						&:hover{
+							text-decoration: none;
+							background: #E6E6E6;
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	> ul > li{
+		background: darken($blue-nav, 3%);
+		@include smooth();
+		&:hover{
+			background: darken($blue-nav, 5%);
+		}
+		h3{
+			color: #FFF;
+		}
+	}
+}
+
+.accordian-light{
+	border-radius: 0;
+	
+	ul{
+		background: $light-nav;
+		li{
+			ul{
+				li{
+					
+					a{
+						color: $light-nav-color;
+						
+						&:hover{
+							text-decoration: none;
+							background: $nav-sub-hover;
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	> ul > li{
+		background: darken($light-nav, 3%);
+		@include smooth();
+		&:hover{
+			background: $light-nav-hover;
+			color: #FFFFFF;
+		}
+		h3{
+			color: $light-nav-color;
+			&:hover{
+				color: #FFFFFF;
+			}
+		}
+	}
+}

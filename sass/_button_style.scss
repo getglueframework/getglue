@@ -1,0 +1,150 @@
+
+/**
+ * Make button haven't border when click (on Firefox browser)
+ */
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
+
+a .button{
+	text-decoration: none;
+}
+
+
+
+/**
+ * Default button style
+ */
+.button{
+	display: inline-block;
+	margin: 5px;
+	color: #555555;
+	background: #F0F0F0;
+	padding: 2px 5px 2px 5px;
+	height: $normal-height;
+	min-width: $normal-width;
+	text-align: center;
+	border: solid 1.5px #DCDCDC;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+	overflow: hidden;
+	font-size: 0.9em;
+	cursor: pointer;
+
+	&:hover{
+		background: darken(#DCDCDC, 5%);
+	}
+
+    &:active{
+        outline: none;
+    }
+    
+}
+
+/**
+ * Flat button style
+ */
+.button-primary{
+	@include flat($primary-color);
+}
+.button-secondary{
+	@include flat($secondary-color);
+}
+.button-success{
+	@include flat($success-color);
+}
+
+.button-danger{
+	@include flat($danger-color);
+}
+.button-orange{
+	@include flat($orange-color);
+}
+.button-dark{
+	@include flat($dark-color);
+}
+.button-night{
+	@include flat($night-color);
+}
+
+
+
+[class*='button-flat-border-']{
+	border-radius: 5px;
+	padding: 5px 8px;
+	color: #FFF;
+	position: relative;
+	border: none;
+	&:active{
+		transform: translate(0px, 5px);
+		-webkit-transform: translate(0px, 5px);
+		box-shadow: 0px 1px 0px 0px;
+	}
+}
+
+.button-flat-border-primary{
+	@include bordered-button($primary-color);
+}
+
+.button-flat-border-secondary{
+	@include bordered-button($secondary-color);
+}
+
+.button-flat-border-success{
+	@include bordered-button($success-color);
+}
+.button-flat-border-danger{
+	@include bordered-button($danger-color);
+}
+
+.button-flat-border-dark{
+	@include bordered-button($dark-color);
+}
+
+.button-flat-border-night{
+	@include bordered-button($night-color);
+}
+
+.button-flat-border-orange{
+	@include bordered-button($orange-color);
+}
+
+
+
+/**
+ * Rounded button
+ */
+[class*='button-rounded-']{
+	border-radius: 5px;
+	padding: 5px 8px;
+	color: #FFF;
+	border: none;
+
+}
+
+.button-rounded-primary{
+	@include rounded-button($primary-color);
+}
+.button-rounded-secondary{
+	@include rounded-button($secondary-color);
+}
+.button-rounded-success{
+	@include rounded-button($success-color);
+}
+.button-rounded-danger{
+	@include rounded-button($danger-color);
+}
+.button-rounded-dark{
+	@include rounded-button($dark-color);
+}
+.button-rounded-orange{
+	@include rounded-button($orange-color);
+}
+.button-rounded-night{
+	@include rounded-button($night-color);
+}

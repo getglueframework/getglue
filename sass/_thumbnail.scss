@@ -1,0 +1,26 @@
+/**
+ * Thumbnail style
+ */
+.thumbnail{
+	.thumbnail-wrapper{
+		background: none;
+		.rounded{
+			img{
+				border: none;
+				border-radius: 5px;
+			}
+		}
+
+		img{
+			width: 100%;
+		}
+	}
+}
+.bordered{
+	padding: 3px;
+	border: 1px solid $border-color;
+	
+	.thumbnail-content{
+		padding: 5px;
+	}
+}

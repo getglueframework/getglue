@@ -1,0 +1,66 @@
+/**
+ * Typograph heading style
+ */
+
+h1, h2, h3, h4, h5{
+	font-weight: 100;
+	color: #272822;
+	margin: 0px;
+
+}
+h1{
+	font-size: 4em;
+}
+h2{
+	font-size: 3em;
+}
+h3{
+	font-size: 2.5em;
+}
+h4{
+	font-size: 2em;
+}
+h5{
+	font-size: 1.5em;
+}
+
+
+@media (max-width: $screen-min){
+	h1{
+		font-size: 3em;
+	}
+	h2{
+		font-size: 2.6em;
+	}
+	h3{
+		font-size: 2.2em;
+	}
+	h4{
+		font-size: 1.6em;
+	}
+	h5{
+		font-size: 1.5em;
+	}
+	
+}
+
+hr{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: none;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+body{
+	font-family: Open Sans;
+	font-size: 0.9em;
+	padding: 0;
+	margin: 0;
+	border: none;
+	color: #272822;
+}
+
+a{
+	text-decoration: none;
+	color: $primary-color; 
+}

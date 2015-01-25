@@ -1,0 +1,326 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+nav{
+    background: #FFFFFF;
+    margin: 0;
+    
+    /* pull down menu */
+    .handle{
+        cursor: pointer;
+        padding: 15px;
+        display: none;
+        font-size: 1em;
+        font-weight: bold;
+        color: $nav-color;
+        @include smooth();
+        .bars{
+            margin-right: 10px;
+        }
+        &:hover{
+            background: $nav-hover;
+            color: #FFFFFF;
+        }
+    }
+   
+    .menu {
+        /* for all level */
+        li{
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+           
+            
+            a{
+                color: $nav-color;
+                font-size: 0.9em;
+                font-weight: bold;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                @include smooth();
+                
+            }
+            
+            /* show second level menu */
+            &:hover{
+                > ul {
+                    display: block;
+                }
+            }
+        }
+        
+        /* hide second level menu */
+        ul{
+
+            
+            ul{
+                left: 149px;
+                top: 0px;
+            }
+            display: none;
+            
+            margin: 0;
+            padding: 0;
+            width: 150px;
+            position: absolute;
+            top: 48px;
+            left: 0px;
+            background: #ffffff;
+            
+            li{
+                
+                display: block;
+                float: none;
+                margin: 0;
+                padding: 0;
+                
+                a{
+                    display: block;
+
+                    color: #797979;
+                    border-left: 3px solid #FFFFFF;
+                    background: #ffffff;
+                    font-size: 0.8em;
+                    padding: 10px;
+                }
+                
+                &:last-of-type{
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+   
+
+}
+
+/* on screen large */
+@media screen and (min-width: 500px){
+    nav{
+        ul{
+            ul{
+                border: 1px solid $border-awesome;
+            }
+        }
+        .menu{
+            display: block;
+        }
+        .menu li a:hover, .menu li:hover > a{
+            color: #ffffff;
+            background: $nav-hover;
+        }
+
+        .menu ul li a:hover, .menu ul li:hover > a{
+            background: $nav-sub-hover;
+            border-left: 3px solid $nav-hover;
+            color: #797979;
+        }
+        
+    }
+    
+    nav.dark{
+            
+            .menu li a:hover, .menu li:hover > a{
+                color: #FFFFFF;
+                background: $dark-nav-hover;
+            }
+            .menu ul li a:hover, .menu ul li:hover > a{
+                background: $nav-sub-hover;
+                border-left: 3px solid $dark-nav-hover;
+                color: #797979;
+            }
+        
+    }
+    nav.blue{
+        .menu ul li a:hover, .menu ul li:hover > a{
+            background: $nav-sub-hover;
+            border-left: 3px solid #091F2A;
+            color: #797979;
+        }
+        .menu li a:hover, .menu li:hover > a{
+            background: #091F2A;
+        }
+    }
+    nav.light{
+       
+        .menu ul li a:hover, .menu ul li:hover > a{
+         
+            border-left: 3px solid $light-nav-hover;
+            
+        }
+    }
+}
+
+
+/* navbar on screen small (mobile) */
+@media screen and (max-width: 500px){
+    nav{
+        .container{
+            padding: 0;
+            margin: 0;
+        }
+        .handle{
+            display: block;
+        }
+        .menu{
+            display: none;
+            ul{
+                display: block;
+                position: relative;
+                top: 0;
+                width: 100%;
+                left: 0;
+    
+                ul{
+                    left: 0;
+
+                }
+            }
+            li{
+                display: block;
+
+            }
+        }
+    }    
+    nav.dark{
+        .menu{
+            ul {
+                
+                li{
+                    
+                    a{
+                       border-left: 0;
+                       background: $dark-nav-small-sub;
+                       color: $border-awesome;
+                       margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    nav.blue{
+        .menu{
+            ul {
+                
+                li{
+                    
+                    a{
+                       border-left: 0;
+                       background: $blue-nav-small-sub;
+                
+                       margin: 0;
+                    }
+                }
+                
+            }
+        }
+    }
+    nav.light{
+        .menu{
+            ul {
+                
+                li{
+                    
+                    a{
+                       border-left: 0;
+                       border-bottom: solid 1px $light-nav;
+                       margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * default style for custom navbar 
+ */
+
+/* light navbar */
+nav.light{
+    .handle{
+        background: $light-nav-hover;
+        color: #F1F1F1;
+        &:hover{
+            background: #50606B;
+            color: #FFFFFF;
+        }
+    }
+
+   background: $light-nav;
+    li{
+        a{
+            color: $light-nav-color;
+        }
+    }
+    .menu li a:hover, .menu li:hover > a{
+        color: #ffffff;
+        background: $light-nav-hover;
+    }
+    .menu ul li a:hover, .menu ul li:hover > a{
+        background: $nav-sub-hover;
+        color: #797979;
+    }
+}
+
+/* dark navbar */
+nav.dark{
+    .handle{
+        color: #F1F1F1;
+        &:hover{
+            background: #3C3C3C;
+            color: #FFFFFF;
+        }
+    }
+    background: $dark-nav;
+    li{
+        a{
+            color: $border-awesome;
+        }
+    }
+    
+    ul{
+        ul{
+            li{
+                a{
+                    color: $dark-nav-hover;
+                }
+            }
+        }  
+    }
+    .menu li a:hover, .menu li:hover > a{
+        color: #FFFFFF;
+        
+    }  
+}
+
+nav.blue{
+    .handle{
+        background: #091F2A;
+        color: #FFFFFF;
+        &:hover{
+            
+            color: #FFFFFF;
+        }
+    }
+
+    background: $blue-nav;
+    li{
+        a{
+            color: #FFFFFF;
+        }
+    }
+    
+    ul{
+        ul{
+            li{
+                a{
+                    color: $dark-nav-hover;
+                }
+            }
+        }  
+    } 
+}
